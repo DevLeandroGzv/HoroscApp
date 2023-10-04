@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import com.leamdro.horoscapp.R
 import com.leamdro.horoscapp.databinding.FragmentLuckBinding
 import com.leamdro.horoscapp.databinding.FragmentPalmistryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PalmistryFragment : Fragment() {
     private var _binding: FragmentPalmistryBinding? = null
     private val binding get() = _binding!!
