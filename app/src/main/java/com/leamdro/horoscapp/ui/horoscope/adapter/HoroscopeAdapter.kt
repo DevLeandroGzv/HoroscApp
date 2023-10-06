@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.leamdro.horoscapp.R
 import com.leamdro.horoscapp.domian.model.HoroscopeInfo
 
- class HoroscopeAdapter (private var horoscopeList : List<HoroscopeInfo> = emptyList()) : RecyclerView.Adapter<HoroscopeViewHolder>(){
+ class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyList(), private val onItemSelected: (HoroscopeInfo) -> Unit
+ ) : RecyclerView.Adapter<HoroscopeViewHolder>(){
 
 
      fun updateList(list:List<HoroscopeInfo>){
@@ -23,7 +24,7 @@ import com.leamdro.horoscapp.domian.model.HoroscopeInfo
 
 
      override fun onBindViewHolder(holder: HoroscopeViewHolder, position: Int) {
-         holder.render(horoscopeList[position])
+         holder.render(horoscopeList[position], onItemSelected)
 
      }
  }
