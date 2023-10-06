@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.leamdro.horoscapp.R
 import com.leamdro.horoscapp.domian.model.HoroscopeInfo
 
- class HoroscopeAdapter (private var horoscopelist : List<HoroscopeInfo> = emptyList()) : RecyclerView.Adapter<HoroscopeViewHolder>(){
+ class HoroscopeAdapter (private var horoscopeList : List<HoroscopeInfo> = emptyList()) : RecyclerView.Adapter<HoroscopeViewHolder>(){
 
 
      fun updateList(list:List<HoroscopeInfo>){
-         horoscopelist = list
+         horoscopeList = list
          notifyDataSetChanged()
      }
      override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoroscopeViewHolder {
@@ -19,11 +19,11 @@ import com.leamdro.horoscapp.domian.model.HoroscopeInfo
         )
      }
 
-     override fun getItemCount() = horoscopelist.size
+     override fun getItemCount() = horoscopeList.size
 
 
      override fun onBindViewHolder(holder: HoroscopeViewHolder, position: Int) {
-         holder.render(horoscopelist[position])
+         holder.render(horoscopeList[position])
 
      }
  }

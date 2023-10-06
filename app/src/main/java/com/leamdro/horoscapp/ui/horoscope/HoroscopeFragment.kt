@@ -39,7 +39,7 @@ class HoroscopeFragment : Fragment() {
         horoscopeAdapter = HoroscopeAdapter()
         binding.rvHoroscope.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = adapter
+            adapter = horoscopeAdapter
         }
     }
 
@@ -47,7 +47,7 @@ class HoroscopeFragment : Fragment() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 horoscopeViewModel.horoscope.collect{
-                //Cambios eb horoscope
+                //Cambios en horoscope
                     horoscopeAdapter.updateList(it)
                 }
             }
